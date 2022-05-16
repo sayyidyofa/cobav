@@ -9,10 +9,10 @@ fn main() {
         return
     }
 
-    senko_result := json.decode(Response, resp.text) or {
+    senko_result := json.decode(APIResponse, resp.text) or {
         eprintln('failed to decode the response body')
         return
     }
 
-    println(senko_result.pagination.items.per_page)
+    println(senko_result.data[0].genres)
 }

@@ -1,8 +1,23 @@
 module main
 
-struct Response {
-	data []string
+struct APIResponse {
+	data []Data
 	pagination Pagination
+}
+
+struct Data {
+	mal_id int
+	url string
+	title string
+	anime_type string [json: "type"]
+	genres []Genre
+}
+
+struct Genre {
+	mal_id int
+	name string
+	genre_type string [json: "type"]
+	url string
 }
 
 struct Pagination {
